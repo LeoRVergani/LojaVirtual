@@ -1,4 +1,5 @@
 import { View, Text, Button, TextInput, StyleSheet, SafeAreaView } from 'react-native';
+import LottieView from 'lottie-react-native';
 import { useRouter, useSegments } from 'expo-router';
 import { useState, useEffect } from 'react';
 import produtos from '../../produtos.json';
@@ -40,6 +41,11 @@ export default function Review() {
 
 
         <View style={styles.container}>
+          <LottieView
+            autoPlay={true}
+            source={require('../../assets/animation.json')}
+            style={{width: 150, height: 150}}
+          />
           <Text style={{ fontSize: 25, fontWeight: 'bold' }}>
             Nos dê seu Feedback
           </Text>
@@ -74,7 +80,7 @@ export default function Review() {
               padding: 10,
               marginVertical: 10,
               width: 325,
-              height: 250,
+              height: 190,
             }}
           />
           <View style={styles.btnGap}>
