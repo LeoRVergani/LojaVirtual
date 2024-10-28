@@ -34,23 +34,14 @@ const styles = StyleSheet.create({
   },
   textBold: {
     fontSize: 40,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: '#2e2444'
   },
   textCenter: {
     textAlign: 'center',
     margin: 25,
-    width: '70%'
+    width: '70%',
+    color: '#2e2444',
+    fontSize: 18
   },
-  textWhite: {
-    color: '#FFF',
-    fontWeight: 'bold',
-    fontSize: 20
-  },
-  btnCentral: {
-    backgroundColor: '#2e2444',
-    padding: 20,
-    width: 150,
-    borderRadius: 8,
-    alignItems: 'center'
-  }
 });

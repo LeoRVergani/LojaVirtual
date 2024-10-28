@@ -1,0 +1,37 @@
+[
+        {
+        "id": 1,
+        "name": "Camiseta Básica",
+        "description": "Camiseta de algodão 100% para uso diário",
+        "price": 49.90,
+        "image": "https://c.pxhere.com/photos/5c/08/title_photo_logo_shirt_a_man_fashion_print_out_storied-544690.jpg!d"
+    },
+    {
+        "id": 2,
+        "name": "Calça Jeans",
+        "description": "Calça jeans confortável e resistente",
+        "price": 129.90,
+        "image": "https://c.pxhere.com/photos/1f/16/leather_pants_men_costume_tradition_bavaria_calves_bavarian_clothing-926617.jpg!d"
+    },
+    {
+        "id": 3,
+        "name": "Tênis Esportivo",
+        "description": "Tênis leve ideal para atividades físicas",
+        "price": 299.90,
+        "image": "https://c.pxhere.com/photos/cd/ac/boots_adidas_run_running_running_track_track_sport_sports-1403151.jpg!d"
+    },
+    {
+        "id": 4,
+        "name": "Mochila Casual",
+        "description": "Mochila resistente com vários compartimentos",
+        "price": 89.90,
+        "image": "https://c.pxhere.com/photos/6e/21/adult_adventure_attractive_back_backpack_bag_behind_boy-936126.jpg!d"
+    },
+    {
+        "id": 5,
+        "name": "Relógio Digital",
+        "description": "Relógio com várias funções e display digital",
+        "price": 199.90,
+        "image": "https://c.pxhere.com/photos/22/58/photo-1610257.jpg!d"
+    }
+]
