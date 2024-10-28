@@ -14,12 +14,12 @@ interface Produto {
 export default function Review() {
   const router = useRouter();
   const segments = useSegments();
-  const id = parseInt(segments[segments.length - 1], 10);
-  const [produto, setProduto] = useState<Produto | undefined>(undefined);
+  const id = parseInt(segments[segments.length]);
+  const [produto, setProduto] = useState<Produto>();
   const [review, setReview] = useState('');
 
   useEffect(() => {
-    const foundProduct = produtos.find((item) => item.id === id);
+    const foundProduct = produtos.find((item) => item.id);
     setProduto(foundProduct);
   }, [id]);
 
@@ -40,11 +40,32 @@ export default function Review() {
 
 
         <View style={styles.container}>
-          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
-            Avaliação para: {produto.name}
+          <Text style={{ fontSize: 25, fontWeight: 'bold' }}>
+            Nos dê seu Feedback
           </Text>
+          <Text style={{textAlign: 'center', width: 325, paddingTop: 25, paddingBottom: 25}}>Sua opinião é importante para nós. Por favor, compartilhe sua experiência.</Text>
           <TextInput
-            placeholder="Escreva sua avaliação aqui"
+            placeholder="Seu nome"
+            style={{
+              borderWidth: 1,
+              borderColor: '#ccc',
+              padding: 10,
+              marginVertical: 10,
+              width: 325,
+            }}
+          />
+                    <TextInput
+            placeholder="Seu e-mail"
+            style={{
+              borderWidth: 1,
+              borderColor: '#ccc',
+              padding: 10,
+              marginVertical: 10,
+              width: 325,
+            }}
+          />
+                    <TextInput
+            placeholder="Descreva sua experiência..."
             value={review}
             onChangeText={setReview}
             style={{
@@ -52,10 +73,14 @@ export default function Review() {
               borderColor: '#ccc',
               padding: 10,
               marginVertical: 10,
+              width: 325,
+              height: 250,
             }}
           />
-          <Button title="Enviar Avaliação" onPress={() => console.log(`Avaliação: ${review}`)} />
-          <Button title="Voltar" onPress={() => router.back()} />
+          <View style={styles.btnGap}>
+            <Button title="Enviar Avaliação" onPress={() => alert(`Avaliação: ${review}`)} />
+            <Button title="Voltar" onPress={() => router.back()} />
+          </View>
       </View>
 
     </SafeAreaView>
@@ -70,5 +95,8 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       alignContent: 'center',
       backgroundColor: '#bab100'
+    },
+    btnGap: {
+      gap: 15
     }
 })

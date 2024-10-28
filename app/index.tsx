@@ -1,79 +1,47 @@
-import { SafeAreaView, Text, StyleSheet, FlatList, View, Image, Button} from "react-native";
-import { useRouter } from 'expo-router'
-import produtos from '../produtos.json';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, Image, SafeAreaView, Pressable} from 'react-native';
+import ButtonClick from '../components/ButtonClick';
+import { Link } from 'expo-router';
 
-export default function listProducts() {
-
-    const router = useRouter();
-
+export default function App() {
     return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.containerView}>
-            <Text style={styles.h1}>Lista de Produtos</Text>
-            <FlatList 
-                data={produtos}
-                keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) => (
-                    <View style={styles.rowText}>
-                        <View style={styles.imageCentral}>
-                            <Image 
-                            source={{ uri: item.image }} 
-                            style={{ width: 140, height: 140 }}
-                            />
-                        </View>
+    <SafeAreaView style={styles.container}>
 
-                        <View style={styles.gapFlat}>
-                            <Text style={styles.textBold}>{item.name}</Text>
-                            <Text>Descrição: {item.description}</Text>
-                            <Text>R$ {item.price.toFixed(2)}</Text>
-                            <Button
-                                title="Avaliar Produto"
-                                onPress={() => router.push(`/review/${item.id}`)}
-                            />
-                        </View>
-                    </View>
-                )}
-            />
-            </View>
+        <Image 
+        source={require('../assets/OIG2.png')}
+        style={{
+        width: 150,
+        height: 150
+        }}
+        />
 
-        </SafeAreaView>
+        <Text style={styles.textBold}>Avalie aqui!</Text>
+        <Text style={styles.textCenter}>Escolha o produto que deseja avaliar e compartilhe sua experiência com outros consumidores</Text>
+
+        <ButtonClick />  
+
+        <StatusBar style="auto" />
+    </SafeAreaView>
     );
-};
+}
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        paddingLeft: 10,
-        paddingRight: 10,
-        backgroundColor: '#bab100'
-    },
-    rowText: {
-        flexDirection: 'row',
-        gap: 2
-    },
-    gapFlat: {
-        gap: 10,
-        width: 225,
-        margin: 5,
-        height: 142
-    },
-    imageCentral: {
-        justifyContent: 'center'
+    flex: 1,
+    backgroundColor: '#bab100',
+    alignItems: 'center',
+    justifyContent: 'center',
     },
     textBold: {
-        fontWeight: 'bold',
-        fontSize: 16
-
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: '#2e2444'
     },
-    containerView: {
-        paddingTop: 50,
-        alignItems: 'center'
+    textCenter: {
+    textAlign: 'center',
+    margin: 25,
+    width: '70%',
+    color: '#2e2444',
+    fontSize: 18
     },
-    h1: {
-        fontSize: 25,
-        fontWeight: 'bold',
-        paddingBottom: 10
-    }
-})
+});
