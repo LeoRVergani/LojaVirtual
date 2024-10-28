@@ -80,7 +80,7 @@ export default function Review() {
               padding: 10,
               marginVertical: 10,
               width: 325,
-              height: 190,
+              height: 225,
             }}
           />
           <View style={styles.btnGap}>
